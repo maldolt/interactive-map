@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Making an Interactive Map Part I</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    <title>Geolocation Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
     <style>
-        #map{
-            height: 400px;
-            background-color: grey;
-        }
+    #map { 
+        height: 400px;
+        background-color: #ccc;
+    }
+    #map::before{
+        content: 'LOADING';
+        font-size: 3em;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        margin-top: 3em;
+    }
+    .leaflet-popup-content-wrapper {
+        width: 100%;
+    }
     </style>
 </head>
 <body>
@@ -24,7 +35,7 @@
         <label for="select">Choose a location:</label>
         <select name="interface" id="values">
         <option value="coffee">Coffee</option>
-        <option value="restaurant">Saab</option>
+        <option value="restaurant">Restaurant</option>
         <option value="hotel">Hotel</option>
         <option value="market">Market</option>
         </select>
